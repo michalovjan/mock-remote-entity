@@ -50,4 +50,12 @@ public class Endpoint {
         });
         return Response.ok().build();
     }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/acceptWithoutCallback")
+    public Response accept(Request request) throws InterruptedException, URISyntaxException {
+        System.out.println("Accepted request: " + request.getCallback() + " with payload: " + request.getPayload());
+        return Response.ok().build();
+    }
 }
